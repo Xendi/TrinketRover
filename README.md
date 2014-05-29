@@ -5,6 +5,21 @@ STEM / STEAM curriculum is gaining momentum in k-12 education. It's exciting, bu
 The aim of this project is to provide a low-cost but high-quality open software / open hardware platform for teaching robotics to students of all ages.
 
 
+Instructions
+============
+
+Build instructions for the original rover are at:
+https://learn.adafruit.com/trinket-powered-rover/red-rover
+
+The Hack Manhattan version is beefed up a little by replacing the Trinket with an Arduino Nano, which is not much bigger and provides full Arduino functionality and digital pins, for only a couple of dollars more than the Trinket. 
+
+The wiring diagram is slightly different for the Nano version, see the /source folder.
+
+We sourced continuous rotation servo motors for almost the same price as regular ones, so you don't have to modify your own! They will still use the Adafruit Softservo library, so be sure to install it to your Arduino IDE hardware folder:
+https://github.com/adafruit/Adafruit_SoftServo
+
+You can 3D print your own chassis, using the STLs found here, or design your own! Rick made the originals in TinkerCAD, so bonus points for anyone who makes a parametric version in OpenSCAD!
+
 
 ####What's next?
 ------
