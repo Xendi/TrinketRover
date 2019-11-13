@@ -11,7 +11,7 @@ Instructions
 Build instructions for the original rover are at:
 https://learn.adafruit.com/trinket-powered-rover/red-rover
 
-The Hack Manhattan version is beefed up a little by replacing the Trinket with an Arduino Nano, which is not much bigger and provides full Arduino functionality and digital pins, for only a couple of dollars more than the Trinket. 
+The Bergen Makerspace version is beefed up a little by replacing the Trinket with an Arduino Nano, which is not much bigger and provides full Arduino functionality and digital pins, for only a couple of dollars more than the Trinket. 
 We are using a different sonar module too, the HC-SR04, which has separate trigger and echo pins.
 
 The wiring diagram is slightly different for the Nano version, see the /source folder.
@@ -23,7 +23,7 @@ Sonar Trig Pin - 			Nano Pin D13
 Sonar Echo Pin - 			Nano Pin D12
 Right Servo Data Pin - 			Nano Pin D4
 Left Servo Data Pin - 			Nano Pin D2
-Power: 4xAA 1.2V NiMH Rechargeables  	Nano 5V/GND    (NB do NOT connect regular alkaline AA batteries directly to 5V, you could fry the Arduino due to the higher voltage!)
+Power: 4xAA 1.5V  			Nano Vin/GND  
 
 
 We sourced continuous rotation servo motors for almost the same price as regular ones, so you don't have to modify your own! They will still use the Adafruit Softservo library, so be sure to install it to your Arduino IDE hardware folder:
