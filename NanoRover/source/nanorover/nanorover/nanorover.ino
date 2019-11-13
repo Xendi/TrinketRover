@@ -1,17 +1,17 @@
-*** original Trinket-powered Micro Rover by Rick Winscot, via Adafruit
-*** modified for Arduino Nano by David Reeves 2014 
-*** Added 7 segment display readout and photoresistor-stall mechanism
+//*** original Trinket-powered Micro Rover by Rick Winscot, via Adafruit
+//*** modified for Arduino Nano by David Reeves 2014, 2019
+//*** Added 7 segment display readout and photoresistor-stall mechanism (neither required for operation)
 
-#include <Adafruit_SoftServo.h>
+
+#include <Adafruit_SoftServo.h>                  // install these two libraries in your IDE
 #include <SoftwareSerial.h>
  
 #define SERVO1PIN 2   // Servo control line (orange) on Nano Pin #2
 #define SERVO2PIN 4   // Servo control line (orange) on Nano Pin #4
-
  
-Adafruit_SoftServo servo_left, servo_rght;
-
+Adafruit_SoftServo servo_left, servo_rght;      
  
+
 // Connect the sonar signal pins to these pins on the Nano.
 #define trigPin 13
 #define echoPin 12
@@ -26,11 +26,14 @@ SoftwareSerial mySerial(7, segPin);  // Tx from arduino is pin 8, connect to Rx 
 // Moderate speed forward for both servos. Given the orientation of the servos
 // one will be going forward, and the other backward. You may need to adjust 
 // these slightly to get the rover to move straight forward.
-const int left_speed = (91+16);
-const int rght_speed = (95-35);
+
+const int left_offset = -8;             //  adjust this if necessary to make rover go straight
+const int right_offset = 1;             //  adjust this if necessary to make rover go straight
+int left_speed = (120+left_offset);
+int right_speed = (60+right_offset);
  
 // Number in cm when the rover will reverse and try to navigate around.
-const int obstacle = 8;
+const int obstacle = 20;
  
 // Multiplier used to determine how far the rover will back-up.
 const int back_track = 100;
@@ -56,11 +59,6 @@ void setup()
   mySerial.begin(9600);
   delay(50);
   mySerial.print(0x76); // reset the 7 segment display
-  
-//    delay(1000);
-//  mySerial.write(0x7A); // Brightness command bit. Must be followed by:
-//  mySerial.write(0x01); // FF is dimmest, 01 is brightest. Can also use mySerial.print("z1")
-//  mySerial.print("w@"); // Turn the 2nd dot on. w@ turns all off.
   mySerial.print("hiya"); //Hello world!
   
   turn_count = 0;
@@ -71,7 +69,7 @@ void loop()
   // Setting servos in forward motion.
   servo_left.write(left_speed );
   servo_left.refresh();
-  servo_rght.write(rght_speed );
+  servo_rght.write(right_speed );
   servo_rght.refresh();
   delay(15);  
  
@@ -132,7 +130,7 @@ void loop()
     //String t = String(turn_count);
                 
                 
-    avoid_direction=random(0,2);
+    avoid_direction=random(0,2);             //  Set up object avoidance method
        // 50% chance of backing up left or right   
     if (avoid_direction == 0) {
       turn_angle = 60;
@@ -144,9 +142,9 @@ void loop()
     
     for (int i = 0; i < back_track; i++) {
       
-      servo_left.write(91+turn_angle);
+      servo_left.write(90+left_offset+turn_angle);
       servo_left.refresh();
-      servo_rght.write(94+turn_angle);
+      servo_rght.write(90+right_offset+turn_angle);
       servo_rght.refresh();  
       delay(15);
     }
@@ -167,15 +165,19 @@ void loop()
   
   while (sensorValue > 400) {
     sensorValue = analogRead(analogInPin); 
-    servo_left.write(91);
+    servo_left.write(90);
     servo_left.refresh();
-    servo_rght.write(94);
+    servo_rght.write(90);
     servo_rght.refresh();  
     delay(150);
   }
  
-   // delay(500);
+
 }
+
+
+// Functions below
+
  
 long microsecondsToInches(long microseconds)
 {
