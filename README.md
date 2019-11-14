@@ -14,7 +14,7 @@ https://learn.adafruit.com/trinket-powered-rover/red-rover
 The Bergen Makerspace version is beefed up a little by replacing the Trinket with an Arduino Nano, which is not much bigger and provides full Arduino functionality and digital pins, for only a couple of dollars more than the Trinket. 
 We are using a different sonar module too, the HC-SR04, which has separate trigger and echo pins.
 
-The wiring diagram is slightly different for the Nano version, see the /source folder.
+The wiring diagram is slightly different for the Nano version, see the /circuit folder.
 
 Connections
 ===========
