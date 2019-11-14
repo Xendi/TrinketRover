@@ -49,22 +49,15 @@ The target price for all electronics / hardware is ~ $25. Plastic parts can be p
 
 #####3D Printing
 ------
- * Chassis (small / large)
- * Front Free-spinning Wheels
- * Rear Drive Wheels
- * Sonar Clip
- * Mustache - not optional...
+ * Chassis (mustache now fully integrated)
+
 
 #####Electronics
 ------
- * Adafruit 3.3v Trinket
- * Parallax Ping))) Ultrasonic Sensor
- * Grove Ultrasonic Ranger
+ * Arduino Nano
+ * HCSR04 Ultrasonic Sensor
  * Continuous Rotation Micro Servos
  * Female / Male Jumpers
 
-#####Hardware
-------
- * 3X M3 10mm Screws
- * 1X M3 Hex Nut
+
  
