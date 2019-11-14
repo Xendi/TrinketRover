@@ -30,17 +30,6 @@ We sourced continuous rotation servo motors for almost the same price as regular
 https://github.com/adafruit/Adafruit_SoftServo
 
 You can 3D print your own chassis, using the STLs found here, or design your own! Rick made the originals in TinkerCAD, so bonus points for anyone who makes a parametric version in OpenSCAD!
-
-
-####What's next?
-------
-Here are a few items that need attention...
-
- [ ] One-click configuration for Trinket 
- 
- [ ] Manufacture continuous rotation servo (Turnigy requires a minimum order)
- 
- [ ] Reduce cost of sonar to < $5
  
 
 The target price for all electronics / hardware is ~ $25. Plastic parts can be produced on-site for ~ $2 each if the school has a 3D printer.
