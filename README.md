@@ -1,4 +1,4 @@
-Trinket Rover
+Nano Rover (previously Trinket Rover)
 ============
 STEM / STEAM curriculum is gaining momentum in k-12 education. It's exciting, but there are some significant obstacles to manage: not all teachers have the technical expertise (or time) to generate curriculum, cost of materials can be prohibitive, and sourcing good quality components can be time consuming.
 
