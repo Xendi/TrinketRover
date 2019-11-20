@@ -1,0 +1,24 @@
+NanoRover Build Instructions
+****************************
+
+
+
+1)  Use two small self-tapping screws to attach each servo to the left and right servo mounts on the plastic chassis. Mount the motors with the wires to the rear of the chassis. Push fit one wheel to each servo and secure with a single large-rim screw.
+
+2) Place 4 AA batteries in the battery pack, and turn the switch to OFF
+
+3) Use Velcro (1" strip) to attach the battery pack to the chassis. Position the battery pack with the switch down, sticking out over the rear end of the chassis so that it remains accessible. 
+
+4) Use Velcro to attach the mini breadboard to the battery pack. 
+
+5) Wire up the breadboard with all the components as in the circuit diagram or breadboard diagram. 
+
+6) Slot the sonar module into the eye sockets at the front of the chassis.
+
+7) Use Velcro to attach the nosewheel under the chassis at the front. 
+
+8) If necessary, use Arduino IDE to upload nanorover.ino (you may need to install Adafruit's Softservo library if you haven't already). 
+
+9) Turn the battery pack switch to ON. Robot!
+
+
